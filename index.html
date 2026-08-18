@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>DTJV e.V. | German-Turkish Youth Association | Intercultural Exchange & Empowerment</title>
+    <meta name="description" content="DTJV e.V. is a German-Turkish youth organization fostering intercultural dialogue, youth empowerment, sustainability, and social integration through Erasmus+ projects.">
+    <meta name="keywords" content="German-Turkish Youth Association, DTJV, Erasmus+, Youth Empowerment, Intercultural Dialogue, Sustainability, Youth Projects Germany, NGO">
+    <meta name="author" content="DTJV e.V.">
+    
+    <!-- Favicon (Tarayıcı Sekme İkonu) -->
+    <link rel="icon" type="image/webp" href="logo.webp">
+
+    <!-- Open Graph (Social Media Sharing) -->
+    <meta property="og:title" content="DTJV e.V. | German-Turkish Youth Association">
+    <meta property="og:description" content="Empowering youth through intercultural projects, sustainability, and social engagement.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sitenizinadi.com"> 
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.sitenizinadi.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- JSON-LD Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DTJV e.V. Deutsch-Türkischer Jugendverein",
+      "url": "https://www.sitenizinadi.com",
+      "description": "A youth organization focused on intercultural dialogue, sustainability, and youth empowerment through Erasmus+ projects.",
+      "email": "jugendvereinde@gmail.com",
+      "sameAs": [
+        "https://www.instagram.com/jugen_dverein/"
+      ]
+    }
+    </script>
+    
+    <style>
+        /* CSS Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --nav-bg: #0f2038;      /* Koyu Lacivert */
+            --primary-green: #2e7d32; /* Canlı Yeşil */
+            --accent-gold: #ffb300;   /* Gold Sarısı */
+            --dark-color: #333333;
+            --light-bg: #f4f7f6;      
+        }
+
+        body {
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 50px;
+            z-index: 1000;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand-logo {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .brand-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--nav-bg);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--nav-bg);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Hamburger Menu Butonu (Mobilde Görünecek) */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--nav-bg);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Sections General */
+        section {
+            padding: 90px 40px 40px 40px;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2px;
+            color: var(--nav-bg);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-align: center;
+            max-width: 700px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* 1. Home Section */
+        #home {
+            position: relative;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            text-align: center;
+            min-height: 100vh;
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        .home-bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        #home::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35); 
+            z-index: -1;
+        }
+
+        #home h1 {
+            font-size: 2.3rem;
+            margin-bottom: 12px;
+            max-width: 950px;
+            line-height: 1.3;
+        }
+
+        #home h1 span {
+            color: var(--accent-gold);
+        }
+
+        #home p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--nav-bg);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: #ffa000;
+        }
+
+        /* 2. About Section */
+        #about {
+            background: linear-gradient(180deg, rgba(15,32,56,0.15) 0%, #fbf9f5 30%, #f5efe6 100%);
+            color: #2c3e50;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            scroll-margin-top: 50px; 
+        }
+
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,179,0,0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .about-content {
+            width: 100%;
+            max-width: 1050px;
+            font-size: 1.05rem;
+            color: #2b3748;
+            font-weight: 500;
+            line-height: 1.7;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 25px 35px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(15, 32, 56, 0.06);
+            border: 1px solid rgba(230, 220, 205, 0.8);
+            border-left: 5px solid var(--accent-gold);
+            position: relative;
+            z-index: 1;
+        }
+
+        #about .section-title {
+            color: var(--nav-bg);
+        }
+
+        #about .section-subtitle {
+            color: var(--primary-green);
+        }
+
+        .about-content p {
+            margin-bottom: 12px;
+        }
+
+        .about-content p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* Otomatik Kayan Alan (Marquee Slider) */
+        .marquee-container {
+            width: 100%;
+            max-width: 1050px;
+            overflow: hidden;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            animation: scrollMarquee 22s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollMarquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #1b4d22 0%, #2e7d32 100%);
+            backdrop-filter: blur(5px);
+            padding: 8px 22px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+            border-left: 4px solid var(--accent-gold);
+            font-size: 0.95rem;
+            white-space: nowrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* 3. We Focus On Section */
+        #focus {
+            background: linear-gradient(135deg, #f2f8f5 0%, #e6f2ec 100%);
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .focus-card {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .focus-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(15, 32, 56, 0.12);
+        }
+
+        .focus-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .focus-card h3 {
+            font-size: 1.1rem;
+            color: var(--nav-bg);
+            margin-bottom: 8px;
+        }
+
+        .focus-card p {
+            font-size: 0.88rem;
+            color: #2b3748;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* 4. Projects Section */
+        #projects {
+            background: linear-gradient(135deg, #eaf2ed 0%, #deebe3 100%);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary-green);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: contain;
+            background-color: #f8f9fa; 
+            padding: 10px;
+        }
+
+        .project-info {
+            padding: 15px;
+            flex-grow: 1;
+        }
+
+        .project-info h3 {
+            margin-bottom: 5px;
+            color: var(--nav-bg);
+            font-size: 1rem;
+        }
+
+        .project-link {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            background: var(--nav-bg);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .project-link:hover {
+            background: var(--primary-green);
+        }
+
+        /* 5. Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #eef4f2 0%, #e3ede8 100%);
+            text-align: center;
+        }
+
+        .contact-layout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-left-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-logo-img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #fff;
+            padding: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .contact-left-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--nav-bg);
+            letter-spacing: 0.5px;
+        }
+
+        .contact-boxes-right {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            flex: 1;
+            min-width: 300px;
+            justify-content: center;
+        }
+
+        .contact-box {
+            background: #fff;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(15, 32, 56, 0.05);
+            flex: 1;
+            min-width: 220px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-gold);
+        }
+
+        .contact-box i {
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 8px;
+        }
+
+        .contact-box h3 {
+            margin-bottom: 5px;
+            color: var(--nav-bg);
+            font-size: 1rem;
+        }
+
+        .contact-box a, .contact-box p {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.88rem;
+        }
+
+        .contact-box a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--nav-bg);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Responsive & Hamburger Menu Styles */
+        @media (max-width: 900px) {
+            header {
+                padding: 12px 20px;
+                justify-content: space-between;
+            }
+            .brand-name {
+                font-size: 0.85rem;
+            }
+            .brand-logo {
+                width: 45px;
+                height: 45px;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+            nav.active {
+                max-height: 300px;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 20px 0;
+            }
+            #home h1 {
+                font-size: 1.7rem;
+            }
+            section {
+                padding: 70px 15px 15px 15px;
+            }
+            .about-content {
+                padding: 15px 20px;
+                font-size: 0.95rem;
+            }
+            .focus-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .contact-layout {
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+
+        @media (min-width: 600px) and (max-width: 900px) {
+            .focus-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="brand-container">
+            <img src="logo.webp" alt="DTJV Logo" class="brand-logo">
+            <div class="brand-name">Deutsch-Türkischer Jugendverein</div>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#focus" class="nav-link">We Focus On</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. Home Section -->
+    <section id="home">
+        <img src="hero.webp" alt="Home Background" class="home-bg-img">
+        <h1>Welcome to <span>Interkulturelle Organisationen</span></h1>
+        <p>Building bridges between cultures, empowering youth, and shaping a sustainable future together.</p>
+        <a href="#projects" class="btn">Discover Our Projects</a>
+    </section>
+
+    <!-- 2. About Section -->
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-subtitle">Gemeinsam • Aktiv • Umwelt • Verbunden</p>
+        
+        <div class="about-content">
+            <p>
+                <strong>Deutsch-Türkischer Jugendverein e.V.</strong> is a youth organization that has been carrying out activities under the name <em>Interkulturelle Organisationen</em> since 2018 and today continues its operations as an official association.
+            </p>
+            <p>
+                Our core mission is to strengthen understanding, communication, and solidarity among different cultures, and to support the personal development and social participation of youth. Through non-formal education, workshops, and various youth activities, we provide young people with new skills and experiences.
+            </p>
+            <p>
+                While supporting cultural diversity, tolerance, and integration, we combat discrimination and xenophobia, and encourage the active participation of individuals from diverse cultural backgrounds in society. Through Erasmus+ and international youth projects, we bring together young people from different countries, strengthening intercultural learning and cooperation.
+            </p>
+            <p style="text-align: center; font-weight: 700; color: var(--nav-bg); margin-top: 12px; font-size: 1.05rem;">
+                Bringing different cultures together, empowering youth, and working for a more inclusive future.
+            </p>
+        </div>
+
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <span class="badge">Gemeinsam (Together)</span>
+                <span class="badge">Aktiv (Active)</span>
+                <span class="badge">Umwelt (Environment)</span>
+                <span class="badge">Verbunden (Connected)</span>
+                <span class="badge">Gemeinsam (Together)</span>
+                <span class="badge">Aktiv (Active)</span>
+                <span class="badge">Umwelt (Environment)</span>
+                <span class="badge">Verbunden (Connected)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. We Focus On Section -->
+    <section id="focus">
+        <h2 class="section-title">We Focus On</h2>
+        <p class="section-subtitle">Our Main Priorities & Goals</p>
+
+        <div class="focus-grid">
+            <!-- 1. Youth Empowerment -->
+            <div class="focus-card">
+                <img src="youth.webp" alt="Youth Empowerment" class="focus-img">
+                <h3>Youth Empowerment</h3>
+                <p>Equipping young people with essential life skills, non-formal education tools, and leadership qualities.</p>
+            </div>
+
+            <!-- 2. Sustainability & Environment -->
+            <div class="focus-card">
+                <img src="environment.webp" alt="Sustainability & Environment" class="focus-img">
+                <h3>Sustainability & Environment</h3>
+                <p>Promoting sustainability, eco-friendly habits, and nature protection projects (Umwelt) across generations.</p>
+            </div>
+
+            <!-- 3. Active Living & Sports -->
+            <div class="focus-card">
+                <img src="active.webp" alt="Active Living & Sports" class="focus-img">
+                <h3>Active Living & Sports</h3>
+                <p>Encouraging physical health, sports activities, and energetic community participation among youth.</p>
+            </div>
+
+            <!-- 4. Digital Skills & Media Literacy -->
+            <div class="focus-card">
+                <img src="digital.webp" alt="Digital Skills & Media Literacy" class="focus-img">
+                <h3>Digital Skills & Media Literacy</h3>
+                <p>Enhancing technological awareness, digital education, and safe online media usage for modern youth.</p>
+            </div>
+
+            <!-- 5. Intercultural Dialogue -->
+            <div class="focus-card">
+                <img src="intercultural.webp" alt="Intercultural Dialogue" class="focus-img">
+                <h3>Intercultural Dialogue</h3>
+                <p>Bridging communities and fostering deep mutual understanding between German, Turkish, and international youth.</p>
+            </div>
+
+            <!-- 6. Youth Mobility -->
+            <div class="focus-card">
+                <img src="mobility.webp" alt="Youth Mobility" class="focus-img">
+                <h3>Youth Mobility</h3>
+                <p>Creating international exchanges, travels, and cooperative projects through European programs like Erasmus+.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Our Projects</h2>
+        <p class="section-subtitle">Erasmus+ Initiatives</p>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="inclusion.webp" alt="Inclusion for Youth">
+                <div class="project-info">
+                    <h3>Inclusion for Youth - Youth for Inclusion</h3>
+                </div>
+                <a href="https://erasmus-plus.ec.europa.eu/projects/search/details/2022-3-DE04-KA153-YOU-000093031" target="_blank" rel="noopener noreferrer" class="project-link">View Details</a>
+            </div>
+
+            <div class="project-card">
+                <img src="immigrants.webp" alt="The World of Immigrants">
+                <div class="project-info">
+                    <h3>The World of Immigrants</h3>
+                </div>
+                <a href="https://erasmus-plus.ec.europa.eu/projects/search/details/2020-2-DE04-KA105-019641" target="_blank" rel="noopener noreferrer" class="project-link">View Details</a>
+            </div>
+
+            <div class="project-card">
+                <img src="employees.webp" alt="Employe(e)rs">
+                <div class="project-info">
+                    <h3>Employe(e)rs</h3>
+                </div>
+                <a href="https://erasmus-plus.ec.europa.eu/projects/search/details/2019-2-DE04-KA105-018322" target="_blank" rel="noopener noreferrer" class="project-link">View Details</a>
+            </div>
+
+            <div class="project-card">
+                <img src="nature.webp" alt="Catch The Nature's Rhythm">
+                <div class="project-info">
+                    <h3>Catch The Nature's Rhythm</h3>
+                </div>
+                <a href="https://erasmus-plus.ec.europa.eu/projects/search/details/2018-3-DE04-KA105-017114" target="_blank" rel="noopener noreferrer" class="project-link">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">CONTACT INFORMATION</h2>
+        <p class="section-subtitle">Get in touch with us</p>
+        
+        <div class="contact-layout">
+            <div class="contact-left-brand">
+                <img src="logo.webp" alt="DTJV Logo" class="contact-logo-img">
+                <div class="contact-left-title">DTJV e.V.</div>
+            </div>
+
+            <div class="contact-boxes-right">
+                <div class="contact-box">
+                    <i class="fa-brands fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <a href="https://www.instagram.com/jugen_dverein/" target="_blank" rel="noopener noreferrer">@jugen_dverein</a>
+                </div>
+
+                <div class="contact-box">
+                    <i class="fa-regular fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <a href="mailto:jugendvereinde@gmail.com">jugendvereinde@gmail.com</a>
+                </div>
+
+                <div class="contact-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Our Location</h3>
+                    <p>Youth Center & Association Headquarters, Germany / Turkey</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 DTJV e.V. Deutsch-Türkischer Jugendverein. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Hamburger Menu -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
